@@ -88,5 +88,39 @@ namespace POS_Products
         {
             DialogResult = DialogResult.OK;
         }
+
+
+        public bool IsPrint { get => cPrint.Checked; }
+        public bool IsPrintPreview { get => cPrintPreview.Checked; }
+        public bool IsPrintDialog { get => cPrintDialog.Checked; }
+
+        private void cPrint_CheckStateChanged(object sender, EventArgs e)
+        {
+            if (cPrint.Checked) {
+                cPrintPreview.Checked = false;
+                cPrintDialog.Checked = false;
+            }
+
+
+        }
+
+        private void cPrintPreview_CheckStateChanged(object sender, EventArgs e)
+        {
+            if (cPrintPreview.Checked)
+            {
+                cPrintDialog.Checked = false;
+                cPrint.Checked = false;
+            }
+
+        }
+
+        private void cPrintDialog_CheckStateChanged(object sender, EventArgs e)
+        {
+            if (cPrintDialog.Checked)
+            {
+                cPrint.Checked = false;
+                cPrintPreview.Checked = false;
+            }
+        }
     }
 }

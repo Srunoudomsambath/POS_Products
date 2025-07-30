@@ -41,9 +41,9 @@
             this.label6 = new System.Windows.Forms.Label();
             this.btnPayment = new System.Windows.Forms.Button();
             this.comboDiscount = new System.Windows.Forms.ComboBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.cPrint = new System.Windows.Forms.CheckBox();
+            this.cPrintPreview = new System.Windows.Forms.CheckBox();
+            this.cPrintDialog = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -167,44 +167,49 @@
             this.comboDiscount.TabIndex = 13;
             this.comboDiscount.SelectedIndexChanged += new System.EventHandler(this.comboDiscount_SelectedIndexChanged);
             // 
-            // checkBox1
+            // cPrint
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(42, 413);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(137, 29);
-            this.checkBox1.TabIndex = 14;
-            this.checkBox1.Text = "checkBox1";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.cPrint.AutoSize = true;
+            this.cPrint.Checked = true;
+            this.cPrint.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cPrint.Location = new System.Drawing.Point(42, 413);
+            this.cPrint.Name = "cPrint";
+            this.cPrint.Size = new System.Drawing.Size(75, 29);
+            this.cPrint.TabIndex = 14;
+            this.cPrint.Text = "Print";
+            this.cPrint.UseVisualStyleBackColor = true;
+            this.cPrint.CheckStateChanged += new System.EventHandler(this.cPrint_CheckStateChanged);
             // 
-            // checkBox2
+            // cPrintPreview
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(305, 395);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(137, 29);
-            this.checkBox2.TabIndex = 15;
-            this.checkBox2.Text = "checkBox2";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.cPrintPreview.AutoSize = true;
+            this.cPrintPreview.Location = new System.Drawing.Point(253, 413);
+            this.cPrintPreview.Name = "cPrintPreview";
+            this.cPrintPreview.Size = new System.Drawing.Size(157, 29);
+            this.cPrintPreview.TabIndex = 15;
+            this.cPrintPreview.Text = "Print Preview";
+            this.cPrintPreview.UseVisualStyleBackColor = true;
+            this.cPrintPreview.CheckStateChanged += new System.EventHandler(this.cPrintPreview_CheckStateChanged);
             // 
-            // checkBox3
+            // cPrintDialog
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(544, 424);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(137, 29);
-            this.checkBox3.TabIndex = 16;
-            this.checkBox3.Text = "checkBox3";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.cPrintDialog.AutoSize = true;
+            this.cPrintDialog.Location = new System.Drawing.Point(486, 413);
+            this.cPrintDialog.Name = "cPrintDialog";
+            this.cPrintDialog.Size = new System.Drawing.Size(142, 29);
+            this.cPrintDialog.TabIndex = 16;
+            this.cPrintDialog.Text = "Print Dialog";
+            this.cPrintDialog.UseVisualStyleBackColor = true;
+            this.cPrintDialog.CheckStateChanged += new System.EventHandler(this.cPrintDialog_CheckStateChanged);
             // 
             // PaymentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(945, 472);
-            this.Controls.Add(this.checkBox3);
-            this.Controls.Add(this.checkBox2);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.cPrintDialog);
+            this.Controls.Add(this.cPrintPreview);
+            this.Controls.Add(this.cPrint);
             this.Controls.Add(this.comboDiscount);
             this.Controls.Add(this.btnPayment);
             this.Controls.Add(this.txtCashReturned);
@@ -243,8 +248,8 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnPayment;
         private System.Windows.Forms.ComboBox comboDiscount;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.CheckBox cPrint;
+        private System.Windows.Forms.CheckBox cPrintPreview;
+        private System.Windows.Forms.CheckBox cPrintDialog;
     }
 }

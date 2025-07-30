@@ -33,8 +33,20 @@ namespace POS_Products
             var result =  _paymentForm.ShowDialog(this);
             if (result == DialogResult.OK)
             {
-                printPreviewDialog.ShowDialog(this);
-                MyData.Orders.Clear();
+                if (_paymentForm.IsPrint)
+                {
+                    printDocument.Print();
+                }else if(_paymentForm.IsPrintPreview){
+                    printPreviewDialog.ShowDialog(this);
+                }else if (_paymentForm.IsPrintDialog)
+                {
+                    var resultPrint = printDialog1.ShowDialog(this);
+                    if (resultPrint == DialogResult.OK)
+                    {
+                        printDialog1.Document.Print();
+                    }
+                }
+                    MyData.Orders.Clear();
                 Application.Restart();
             }
 

@@ -97,13 +97,55 @@ namespace POS_Products
             }
             pen = new Pen(Color.Black, 1);
             e.Graphics.DrawLine(pen, 0, y, e.PageBounds.Width, y);
+
             string totalAmountText = "Total Amount: ".PadLeft(40) + $"{TotalAmount:c2}";
             y += 5;
-            e.Graphics.DrawString(totalAmountText,font,Brushes.Black, 0, y);
+            e.Graphics.DrawString(totalAmountText, font, Brushes.Black, 0, y);
 
             y += 15;
-            string discountText = $"Discount : ".PadLeft(40) + $"{paymentForm.Discount}%";
-            e.Graphics.DrawString(discountText,font,Brushes.Black,0, y);    
+            string discountText = $"Discount: ".PadLeft(40) + $"{paymentForm.Discount}%";
+            e.Graphics.DrawString(discountText, font, Brushes.Black, 0, y);
+
+            y += 15;
+            string discountPriceText = "Discount Price: ".PadLeft(40) + $"{paymentForm.DiscountPrice:c2}";
+            e.Graphics.DrawString(discountPriceText, font, Brushes.Black, 0, y);
+
+            font = new Font("Consolas", 7, FontStyle.Bold);
+            y += 15;
+            string paymentText = "Payment: ".PadLeft(40) + $"{paymentForm.Payment:c2}";
+            e.Graphics.DrawString(paymentText, font, Brushes.Black, 0, y);
+
+            font = new Font("Consolas", 7, FontStyle.Regular);
+
+            y += 15;
+            string cashRecievedText = "Cash Recieved: ".PadLeft(40) + $"{paymentForm.CashReceived:c2}";
+            e.Graphics.DrawString(cashRecievedText, font, Brushes.Black, 0, y);
+
+            y += 15;
+            string cashReturnedText = "Cash Returned: ".PadLeft(40) + $"{paymentForm.CashReceived:c2}";
+            e.Graphics.DrawString(cashReturnedText, font, Brushes.Black, 0, y);
+
+            y += 25;
+            string text = " សូមអរគុណចំពោះការទិញទំនិញនៅហាងរបស់យើងខ្ញុំ សូមអញ្ជើញមកម្តងទៀត";
+            font = new Font("Kh Content", 6, FontStyle.Regular);
+            e.Graphics.DrawString(text, font, Brushes.Black, 0, y);
+
+            y += 15;
+            text = "                 Thank you for shopping with us, please come again!";
+            font = new Font("Arial", 6, FontStyle.Regular);
+            e.Graphics.DrawString(text, font, Brushes.Black, 0, y);
+
+            y += 15;
+            text = "                              ទំនិញដែលទិញហើយមិនអាចដូរបានទេ";
+            font = new Font("Kh Content", 6, FontStyle.Regular);
+            e.Graphics.DrawString(text, font, Brushes.Black, 0, y);
+
+
+            y += 15;
+            text = "                                  Goods sold are not returnable";
+            font = new Font("Arial", 6, FontStyle.Regular);
+            e.Graphics.DrawString(text, font, Brushes.Black, 0, y);
+
 
 
 
